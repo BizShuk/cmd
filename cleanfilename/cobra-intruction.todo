@@ -11,3 +11,7 @@ Cobra:
             embeded with variable
         PersistenFlags:
             flags for current and sub command against local flags
+
+go:
+    go test -coverprofile=out/coverage.out ./...
+    go test -coverprofile=coverage.out ./... && go tool cover -func=coverage.out
