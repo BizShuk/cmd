@@ -1,6 +1,8 @@
 Feature:
+    ☐ filepath impl
     ☐ clean code
-    ☐  use file regex to find all match file
+    ☐ use file regex to find all match file
+    ☐ filter by type
 
 tee:
     ☐ handle file too long issue
