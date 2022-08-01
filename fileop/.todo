@@ -14,6 +14,7 @@ Note:
         ☐ it should have some content from pipe
 
 Archive:
+  ✔ fileop defaultclean => remove unnecessary files like .DS_Store @done(22-08-01 19:24) @project(Feature)
   ✔ filepath impl @done(22-08-01 19:50) @project(Feature)
   ✔ clean code @done(22-08-01 19:51) @project(Feature)
   ✔ clean filename in current folder @done(22-07-30 23:11) @project(Feature)
