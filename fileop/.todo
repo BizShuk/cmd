@@ -1,7 +1,11 @@
 Feature:
     ☐ Generate sample cases from sample_list
+    ☐ Add bash completion
+    // cmd.Root().GenBashCompletion(os.Stdout) // generate autocomple script for bash
     ☐ Use file regex to find all match file
     ☐ Filter by type
+
+
 
 tee:
     ☐ handle file too long issue
