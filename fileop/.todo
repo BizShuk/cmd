@@ -1,0 +1,21 @@
+Feature:
+    ☐ filepath impl
+    ☐ clean code
+    ☐ use file regex to find all match file
+    ☐ filter by type
+
+tee:
+    ☐ handle file too long issue
+    ☐ handle directory file to generate
+
+Note:
+    xargs:
+        ☐ -0 is for dealing with space
+    tee:
+        ☐ it should have some content from pipe
+
+Archive:
+  ✔ clean filename in current folder @done(22-07-30 23:11) @project(Feature)
+  ✔ clean filename with given path with file regex @done(22-07-30 23:11) @project(Feature)
+  ✔ handle folder issue with recursive @done(22-07-30 23:48) @project(Feature)
+  ✔ use flags control recursive @done(22-07-31 00:53) @project(Feature)
