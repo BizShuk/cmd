@@ -25,6 +25,7 @@ File list will be removed:
     - .DS_Store
     `,
 	Run: func(cmd *cobra.Command, args []string) {
+		// cmd.Root().GenBashCompletion(os.Stdout) // generate autocomple script for bash
 		GenerateTries()
 		absPath, err := os.Getwd()
 		if err != nil {
