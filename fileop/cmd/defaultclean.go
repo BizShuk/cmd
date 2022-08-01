@@ -50,13 +50,15 @@ File list will be removed:
 			if err != nil {
 				log.Fatal(err)
 			}
-			log.Info("Remove file:", absPath, " Successfully")
 
-			log.Info("File Name:", info.Name())        // Base name of the file
-			log.Info("Size:", info.Size())             // Length in bytes for regular files
-			log.Info("Permissions:", info.Mode())      // File mode bits
-			log.Info("Last Modified:", info.ModTime()) // Last modification time
-			log.Info("Is Directory: ", info.IsDir())   // Abbreviation for Mode().IsDir()
+			if Verbose {
+				log.Info("Remove file:", absPath, " Successfully")
+				log.Info("    File Name:", info.Name())        // Base name of the file
+				log.Info("    Size:", info.Size())             // Length in bytes for regular files
+				log.Info("    Permissions:", info.Mode())      // File mode bits
+				log.Info("    Last Modified:", info.ModTime()) // Last modification time
+				log.Info("    Is Directory: ", info.IsDir())   // Abbreviation for Mode().IsDir()
+			}
 
 			return nil
 		})
@@ -68,6 +70,7 @@ File list will be removed:
 
 func init() {
 	rootCmd.AddCommand(defaultcleanCmd)
+	defaultcleanCmd.Flags().BoolVarP(&Verbose, "verbose", "v", false, "Show more infromation of process.")
 }
 
 func GetFileList() []string {
