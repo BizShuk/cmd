@@ -32,36 +32,7 @@ File list will be removed:
 			log.Fatal("Failed to get current folder")
 		}
 
-		err = filepath.Walk(absPath, func(absPath string, info fs.FileInfo, err error) error {
-			if info.IsDir() {
-				return nil
-			}
-
-			if err != nil {
-				return err
-			}
-
-			found := FindFileInTries(path.Base(absPath))
-			if !found {
-				return nil
-			}
-
-			err = os.Remove(absPath)
-			if err != nil {
-				log.Fatal(err)
-			}
-
-			if Verbose {
-				log.Info("Remove file:", absPath, " Successfully")
-				log.Info("    File Name:", info.Name())        // Base name of the file
-				log.Info("    Size:", info.Size())             // Length in bytes for regular files
-				log.Info("    Permissions:", info.Mode())      // File mode bits
-				log.Info("    Last Modified:", info.ModTime()) // Last modification time
-				log.Info("    Is Directory: ", info.IsDir())   // Abbreviation for Mode().IsDir()
-			}
-
-			return nil
-		})
+		err = filepath.Walk(absPath)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -77,6 +48,45 @@ func GetFileList() []string {
 	return []string{
 		".DS_Store",
 	}
+}
+
+func counterFunc(cleanFunc func(absPath string, info fs.FileInfo, err error) error) func(absPath string, info fs.FileInfo, err error) error {
+	counter := 0
+	return func(absPath string, info fs.FileInfo, err error) error {
+		counter += 1
+		return cleanFunc(absPath, info, err)
+	}
+}
+
+func cleanFunc(absPath string, info fs.FileInfo, err error) error {
+	if info.IsDir() {
+		return nil
+	}
+
+	if err != nil {
+		return err
+	}
+
+	found := FindFileInTries(path.Base(absPath))
+	if !found {
+		return nil
+	}
+
+	err = os.Remove(absPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if Verbose {
+		log.Info("Remove file:", absPath, " Successfully")
+		log.Info("    File Name:", info.Name())        // Base name of the file
+		log.Info("    Size:", info.Size())             // Length in bytes for regular files
+		log.Info("    Permissions:", info.Mode())      // File mode bits
+		log.Info("    Last Modified:", info.ModTime()) // Last modification time
+		log.Info("    Is Directory: ", info.IsDir())   // Abbreviation for Mode().IsDir()
+	}
+
+	return nil
 }
 
 func GenerateTries() {
