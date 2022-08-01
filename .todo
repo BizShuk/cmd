@@ -1,0 +1,10 @@
+fileop rename:
+    ☐ Cleanfilename => fileop
+    ☐ cleanfilename => fileop rename
+
+fileop defaultclean:
+    ✔ fileop clean => remove unnecessary files like .DS_Store @done(22-08-01 19:24)
+
+
+cobra autocompletion:
+    ☐ // cmd.Root().GenBashCompletion(os.Stdout) // generate autocomple script for bash
