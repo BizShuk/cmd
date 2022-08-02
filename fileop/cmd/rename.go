@@ -21,5 +21,5 @@ var renameCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(renameCmd)
+	RoodCmd.AddCommand(renameCmd)
 }

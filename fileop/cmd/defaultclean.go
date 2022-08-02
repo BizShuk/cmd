@@ -32,7 +32,7 @@ File list will be removed:
 			log.Fatal("Failed to get current folder")
 		}
 
-		err = filepath.Walk(absPath)
+		err = filepath.Walk(absPath, cleanFunc)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -40,7 +40,7 @@ File list will be removed:
 }
 
 func init() {
-	rootCmd.AddCommand(defaultcleanCmd)
+	RoodCmd.AddCommand(defaultcleanCmd)
 	defaultcleanCmd.Flags().BoolVarP(&Verbose, "verbose", "v", false, "Show more infromation of process.")
 }
 

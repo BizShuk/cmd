@@ -5,6 +5,10 @@ Feature:
     ☐ Use file regex to find all match file
     ☐ Filter by type
 
+
+    ☐ create .pre-commit-config.yaml with sample-config if not exist
+    ☐ use tags/commit in HEAD to generate version file
+
 Archive:
   ✔ fileop defaultclean => remove unnecessary files like .DS_Store @done(22-08-01 19:24) @project(Feature)
   ✔ filepath impl @done(22-08-01 19:50) @project(Feature)
