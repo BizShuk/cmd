@@ -5,18 +5,6 @@ Feature:
     ☐ Use file regex to find all match file
     ☐ Filter by type
 
-
-
-tee:
-    ☐ handle file too long issue
-    ☐ handle directory file to generate
-
-Note:
-    xargs:
-        ☐ -0 is for dealing with space
-    tee:
-        ☐ it should have some content from pipe
-
 Archive:
   ✔ fileop defaultclean => remove unnecessary files like .DS_Store @done(22-08-01 19:24) @project(Feature)
   ✔ filepath impl @done(22-08-01 19:50) @project(Feature)
