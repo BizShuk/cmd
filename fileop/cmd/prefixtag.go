@@ -25,7 +25,6 @@ var prefixtagCmd = &cobra.Command{
 }
 
 func cleanFileName(cmd *cobra.Command, args []string) {
-
 	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal("Failed to get current folder")
@@ -36,7 +35,6 @@ func cleanFileName(cmd *cobra.Command, args []string) {
 }
 
 func cleanFiles(path string) {
-
 	files, err := ioutil.ReadDir(path)
 	if err != nil {
 		log.Fatal("Failed to read this folder")
@@ -68,6 +66,7 @@ func cleanFiles(path string) {
 		}
 	}
 }
+
 func removePrefixTags(s string) string {
 	cn := GetRegexPattern().ReplaceAllString(s, "")
 	return cn

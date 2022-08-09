@@ -6,8 +6,8 @@ Feature:
     ☐ Filter by type
 
 
-    ☐ create .pre-commit-config.yaml with sample-config if not exist
-    ☐ use tags/commit in HEAD to generate version file
+    ✔ create .pre-commit-config.yaml with sample-config if not exist @done(22-08-04 02:07)
+    ✔ use tags/commit in HEAD to generate version file @done(22-08-04 02:07)
 
 Archive:
   ✔ fileop defaultclean => remove unnecessary files like .DS_Store @done(22-08-01 19:24) @project(Feature)

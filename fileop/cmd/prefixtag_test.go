@@ -18,7 +18,7 @@ func Test_renamePrefixTags(t *testing.T) {
 		{name: "Replace prefix tags", args: args{"[1][2][3]file.ext"}, want: "file.ext"},
 		{name: "Replace prefix tags with symbol", args: args{"[*][!][#]file.ext"}, want: "file.ext"},
 		{name: "Replace prefix tags with empty", args: args{"[][][]file.ext"}, want: "file.ext"},
-		{name: "Case 1", args: args{"[140929][メリー・ジェーン]すぽコン～SPORTS WEAR-COMPLEX～ 上巻 アスリートボディのゆ・う・わ・く[720P].mp4"}, want: "すぽコン～SPORTS WEAR-COMPLEX～ 上巻 アスリートボディのゆ・う・わ・く[720P].mp4"},
+		{name: "AV filename", args: args{"[140929][メリー・ジェーン]すぽコン～SPORTS WEAR-COMPLEX～ 上巻 アスリートボディのゆ・う・わ・く[720P].mp4"}, want: "すぽコン～SPORTS WEAR-COMPLEX～ 上巻 アスリートボディのゆ・う・わ・く[720P].mp4"},
 
 		{name: "Replace prefix tags with empty", args: args{"(18禁アニメ) 炎の孕ませおっぱいエロアプリ学園 THE ANIMATION 第1巻（1280x720 AVC_AAC）.mp4"}, want: "炎の孕ませおっぱいエロアプリ学園 THE ANIMATION 第1巻（1280x720 AVC_AAC）.mp4"},
 	}
