@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
@@ -22,6 +21,6 @@ var projectCmd = &cobra.Command{
 }
 
 func init() {
-	cmd.RoodCmd.AddCommand(projectCmd)
+	cmd.RootCmd.AddCommand(projectCmd)
 
 }

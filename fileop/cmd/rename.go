@@ -1,6 +1,5 @@
 /*
 Copyright © 2022 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
@@ -21,5 +20,5 @@ var renameCmd = &cobra.Command{
 }
 
 func init() {
-	RoodCmd.AddCommand(renameCmd)
+	RootCmd.AddCommand(renameCmd)
 }

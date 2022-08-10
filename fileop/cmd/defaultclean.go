@@ -46,7 +46,7 @@ File list will be removed:
 }
 
 func init() {
-	RoodCmd.AddCommand(defaultcleanCmd)
+	RootCmd.AddCommand(defaultcleanCmd)
 	defaultcleanCmd.Flags().BoolVarP(&Verbose, "verbose", "v", false, "Show more infromation of process.")
 }
 
